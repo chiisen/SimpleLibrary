@@ -4,4 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.101.5" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.101.12" />
+    <PackageReference Include="Colorful.Console" Version="1.2.9" />
+  </ItemGroup>
+
 </Project>
