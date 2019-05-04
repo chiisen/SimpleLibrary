@@ -1,5 +1,4 @@
-﻿using Autofac;
-using SimpleLibrary.Logger;
+﻿using SimpleLibrary.Logger;
 using System.Drawing;
 
 namespace SimpleLibrary.S3
@@ -36,9 +35,9 @@ namespace SimpleLibrary.S3
             }
         }
 
-        public S3Info(string bucketName, string accessKeyID, string secretAccessKey, ContainerBuilder builder = null)
+        public S3Info(string bucketName, string accessKeyID, string secretAccessKey, ILogger logger = null)
         {
-            InitLogger(builder);
+            InitLogger(logger);
 
             _BucketName      = bucketName;
             _AccessKeyID     = accessKeyID;
@@ -48,12 +47,11 @@ namespace SimpleLibrary.S3
             Print($"AccessKeyID : {_AccessKeyID}", Color.Yellow);
         }
 
-        private void InitLogger(ContainerBuilder builder)
+        private void InitLogger(ILogger logger)
         {
-            if (builder != null)
+            if (logger != null)
             {
-                IContainer container_ = builder.Build();
-                _Logger = container_.Resolve<ILogger>();
+                _Logger = logger;
             }
         }
 

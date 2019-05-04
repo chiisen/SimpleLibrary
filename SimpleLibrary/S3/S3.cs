@@ -44,11 +44,11 @@ namespace SimpleLibrary.S3
             InitLogger(builder);
             
 
-            _S3Info = new S3Info(bucketName, accessKeyID, secretAccessKey, builder);
+            _S3Info = new S3Info(bucketName, accessKeyID, secretAccessKey, _Logger);
 
             _S3Config.RegionEndpoint = Amazon.RegionEndpoint.USWest2;
 
-            _S3Client = new AmazonS3Client(_S3Info.BucketName, secretAccessKey, _S3Config);
+            _S3Client = new AmazonS3Client(accessKeyID, secretAccessKey, _S3Config);
         }
 
         /// <summary>

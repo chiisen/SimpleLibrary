@@ -2,16 +2,39 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Sam</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Copyright></Copyright>
+    <Version>1.19.0504.0151</Version>
+    <Company>My Company</Company>
+    <PackageTags>AWS, S3, C#</PackageTags>
+    <Description>Upload files to the AWS S3 service</Description>
+    <NeutralLanguage>zh-TW</NeutralLanguage>
+    <PackageIconUrl>http://image.acmx.xyz/lindexi%2F2019427172218870</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>false</Optimize>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.2" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.101.5" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.101.12" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.29.12" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.27.1" />
     <PackageReference Include="Colorful.Console" Version="1.2.9" />
   </ItemGroup>
 
