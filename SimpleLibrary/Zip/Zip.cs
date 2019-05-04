@@ -37,7 +37,7 @@ namespace SimpleLibrary.Zip
         /// 檢查並提示 S3 的下載網址不能有 ' 分號
         /// </summary>
         /// <param name="filePath">上傳 S3 的檔案路徑</param>
-        void CheckS3Path(string filePath)
+        private void CheckS3Path(string filePath)
         {
             string path_ = filePath;
             if (path_.Contains("'") == true)
@@ -53,7 +53,7 @@ namespace SimpleLibrary.Zip
         /// </summary>
         /// <param name="outputZipPath">輸出的 zip 檔案路徑</param>
         /// <param name="inputDirectory">要壓縮的目錄路徑</param>
-        void ZipTo(string outputZipPath, string inputDirectory)
+        public void ZipTo(string outputZipPath, string inputDirectory)
         {
             // 修正 S3 的下載網址不能有 ' 分號
             CheckS3Path(outputZipPath);
