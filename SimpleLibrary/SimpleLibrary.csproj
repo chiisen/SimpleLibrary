@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/chiisen/SimpleLibrary/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright></Copyright>
-    <Version>1.19.0506.1713</Version>
+    <Version>1.19.0506.1838</Version>
     <Company>My Company</Company>
     <PackageTags>AWS, S3, C#, .Net Standard, ZIP, GMail, Line</PackageTags>
     <Description>Upload zip files to the AWS S3 service
