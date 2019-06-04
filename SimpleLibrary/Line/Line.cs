@@ -2,36 +2,17 @@
 using Newtonsoft.Json;
 using SimpleLibrary.Logger;
 using System;
-using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Text;
 
 namespace SimpleLibrary.Line
 {
-    public class Line
+    public class Line : PrintLogger
     {
-        private ILogger _Logger = new ConsoleLogger();
         private string _Url     = "";
         private string _UserId  = "";        
         private string _ApiKey  = "";
-
-        private void Print(string msg, Color color)
-        {
-            if (_Logger != null)
-            {
-                _Logger.Print(msg, color);
-            }
-        }
-
-        private void InitLogger(ContainerBuilder builder)
-        {
-            if (builder != null)
-            {
-                IContainer container_ = builder.Build();
-                _Logger = container_.Resolve<ILogger>();
-            }
-        }
 
         public Line(string url, string userId, string apiKey, ContainerBuilder builder = null)
         {

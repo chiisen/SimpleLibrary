@@ -1,13 +1,12 @@
 ﻿using Autofac;
 using SimpleLibrary.Logger;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Net;
 using System.Net.Mail;
 
 namespace SimpleLibrary.GMail
 {
-    public class GMail
+    public class GMail : PrintLogger
     {
         /// <summary>
         /// 發信人的 Email
@@ -18,25 +17,6 @@ namespace SimpleLibrary.GMail
         /// 發信人的 Email 密碼
         /// </summary>
         private readonly string _EmailPassword = "";
-
-        private ILogger _Logger = new ConsoleLogger();
-
-        private void Print(string msg, Color color)
-        {
-            if (_Logger != null)
-            {
-                _Logger.Print(msg, color);
-            }
-        }
-
-        private void InitLogger(ContainerBuilder builder)
-        {
-            if (builder != null)
-            {
-                IContainer container_ = builder.Build();
-                _Logger = container_.Resolve<ILogger>();
-            }
-        }
 
         public GMail(string emailAddress, string emailPassword, ContainerBuilder builder = null)
         {

@@ -1,33 +1,14 @@
-﻿using ICSharpCode.SharpZipLib.Zip;
+﻿using Autofac;
+using ICSharpCode.SharpZipLib.Zip;
 using SimpleLibrary.Logger;
 using System;
 using System.Drawing;
 using System.IO;
-using Autofac;
 
 namespace SimpleLibrary.Zip
 {
-    public class Zip
+    public class Zip : PrintLogger
     {
-        private ILogger _Logger = new ConsoleLogger();
-
-        private void Print(string msg, Color color)
-        {
-            if (_Logger != null)
-            {
-                _Logger.Print(msg, color);
-            }
-        }
-
-        private void InitLogger(ContainerBuilder builder)
-        {
-            if (builder != null)
-            {
-                IContainer container_ = builder.Build();
-                _Logger = container_.Resolve<ILogger>();
-            }
-        }
-
         public Zip(ContainerBuilder builder = null)
         {
             InitLogger(builder);

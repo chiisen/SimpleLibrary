@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/.vs": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/packages": true,
+        "**/MigrationBackup": true,
+        "Build/*.nupkg": true
+    }
+}

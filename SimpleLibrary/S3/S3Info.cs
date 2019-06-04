@@ -3,10 +3,8 @@ using System.Drawing;
 
 namespace SimpleLibrary.S3
 {
-    public class S3Info
+    public class S3Info : PrintLogger
     {
-        private ILogger _Logger = new ConsoleLogger();
-
         private readonly string _BucketName = "";
         private readonly string _AccessKeyID = "";
         private readonly string _SecretAccessKey = "";
@@ -37,7 +35,7 @@ namespace SimpleLibrary.S3
 
         public S3Info(string bucketName, string accessKeyID, string secretAccessKey, ILogger logger = null)
         {
-            InitLogger(logger);
+            AddLogger(logger);
 
             _BucketName      = bucketName;
             _AccessKeyID     = accessKeyID;
@@ -45,22 +43,6 @@ namespace SimpleLibrary.S3
 
             Print($"BucketName : {_BucketName}", Color.Yellow);
             Print($"AccessKeyID : {_AccessKeyID}", Color.Yellow);
-        }
-
-        private void InitLogger(ILogger logger)
-        {
-            if (logger != null)
-            {
-                _Logger = logger;
-            }
-        }
-
-        private void Print(string msg, Color color)
-        {
-            if (_Logger != null)
-            {
-                _Logger.Print(msg, color);
-            }
         }
     }
 }

@@ -9,29 +9,11 @@ using System.IO;
 
 namespace SimpleLibrary.S3
 {
-    public class S3
+    public class S3 : PrintLogger
     {
-        private ILogger _Logger          = new ConsoleLogger();
         private S3Info _S3Info           = null;
         private AmazonS3Config _S3Config = new AmazonS3Config();
         private AmazonS3Client _S3Client = null;
-
-        private void Print(string msg, Color color)
-        {
-            if (_Logger != null)
-            {
-                _Logger.Print(msg, color);
-            }
-        }
-
-        private void InitLogger(ContainerBuilder builder)
-        {
-            if (builder != null)
-            {
-                IContainer container_ = builder.Build();
-                _Logger = container_.Resolve<ILogger>();
-            }
-        }
 
         /// <summary>
         /// 初始化 AWS 的 S3 服務
@@ -41,10 +23,9 @@ namespace SimpleLibrary.S3
         /// <param name="secretAccessKey">AWS 在 IAM 申請的 SecretAccessKey</param>
         public S3(string bucketName, string accessKeyID, string secretAccessKey, ContainerBuilder builder = null)
         {
-            InitLogger(builder);
-            
+            ILogger log_ = InitLogger(builder);            
 
-            _S3Info = new S3Info(bucketName, accessKeyID, secretAccessKey, _Logger);
+            _S3Info = new S3Info(bucketName, accessKeyID, secretAccessKey, log_);
 
             _S3Config.RegionEndpoint = Amazon.RegionEndpoint.USWest2;
 
