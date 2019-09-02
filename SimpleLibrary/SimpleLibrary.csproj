@@ -6,15 +6,17 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/chiisen/SimpleLibrary/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>MIT License</Copyright>
-    <Version>1.19.0506.1838</Version>
+    <Version>1.0.2</Version>
     <Company>My Company</Company>
     <PackageTags>AWS, S3, C#, .Net Standard, ZIP, GMail, Line</PackageTags>
     <Description>Upload zip files to the AWS S3 service
 Use GMail sending letters to other people
 Line notifies users</Description>
     <NeutralLanguage>zh-TW</NeutralLanguage>
-    <PackageIconUrl>http://image.acmx.xyz/lindexi%2F2019427172218870</PackageIconUrl>
+    <PackageIconUrl>https://chiisen.github.io/image/github.io/cat-icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/chiisen/SimpleLibrary</PackageProjectUrl>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -32,6 +34,18 @@ Line notifies users</Description>
     <DebugSymbols>true</DebugSymbols>
     <PlatformTarget>x86</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>True</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyVersionSettings>None.None.None.Increment</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>None.None.None.Increment</AssemblyFileVersionSettings>
+    <PackageVersionSettings>AssemblyFileVersion.IncrementWithAutoReset.None</PackageVersionSettings>
+    <PrimaryVersionType>AssemblyFileVersionAttribute</PrimaryVersionType>
   </PropertyGroup>
 
   <ItemGroup>
