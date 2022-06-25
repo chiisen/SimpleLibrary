@@ -50,8 +50,8 @@ Line notifies users</Description>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.4.0" />
-    <PackageReference Include="AWSSDK.Core" Version="3.3.29.12" />
-    <PackageReference Include="AWSSDK.S3" Version="3.3.27.1" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.12.3" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.9.19" />
     <PackageReference Include="Colorful.Console" Version="1.2.15" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="SharpZipLib" Version="1.3.3" />
